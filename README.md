@@ -20,13 +20,9 @@
 
 ## Instalación
 
-### Opción 1: Chrome Web Store
+La extensión no está en la Chrome Web Store; se instala manualmente:
 
-_Próximamente._
-
-### Opción 2: Manual (desde GitHub)
-
-1. Descargá la última versión desde [Releases](../../releases) o con **Code → Download ZIP**.
+1. Descargá el zip de la última versión desde [Releases](../../releases/latest) (o con **Code → Download ZIP**).
 2. Descomprimí el archivo en una carpeta que no vayas a borrar (la extensión se carga desde ahí).
 3. Abrí `chrome://extensions` en Chrome.
 4. Activá el **Modo de desarrollador** (arriba a la derecha).
@@ -34,7 +30,7 @@ _Próximamente._
 
 Funciona también en Edge, Brave, Opera y otros navegadores basados en Chromium.
 
-> **Actualizar:** descargá la versión nueva, reemplazá los archivos de la carpeta y apretá el botón de recargar (↻) de la extensión en `chrome://extensions`.
+> **Actualizar:** la extensión no se actualiza sola. Descargá la versión nueva, reemplazá los archivos de la carpeta y apretá el botón de recargar (↻) de la extensión en `chrome://extensions`. Para enterarte de nuevas versiones, en GitHub usá **Watch → Custom → Releases**.
 
 ## Uso
 
