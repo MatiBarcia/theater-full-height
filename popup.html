@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0;
+        padding: 14px 16px;
+        width: 260px;
+        font: 13px/1.4 system-ui, sans-serif;
+        background: #0f0f0f;
+        color: #f1f1f1;
+      }
+      h1 { font-size: 14px; margin: 0 0 12px; }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 8px 0;
+        cursor: pointer;
+      }
+      .row + .row { border-top: 1px solid #272727; }
+      .hint { display: block; color: #aaa; font-size: 11px; }
+      .row.disabled { opacity: 0.45; pointer-events: none; }
+      p { margin: 10px 0 0; color: #aaa; font-size: 12px; }
+
+      /* Switch */
+      .switch { position: relative; flex: none; width: 36px; height: 20px; }
+      .switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+      .slider {
+        position: absolute;
+        inset: 0;
+        background: #555;
+        border-radius: 20px;
+        transition: background 0.15s;
+      }
+      .slider::before {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        left: 3px;
+        top: 3px;
+        background: #fff;
+        border-radius: 50%;
+        transition: transform 0.15s;
+      }
+      .switch input:checked + .slider { background: #f00; }
+      .switch input:checked + .slider::before { transform: translateX(16px); }
+      .switch input:focus-visible + .slider { outline: 2px solid #3ea6ff; outline-offset: 2px; }
+    </style>
+  </head>
+  <body>
+    <h1>Theater Full Height</h1>
+
+    <label class="row">
+      <span>Activado</span>
+      <span class="switch">
+        <input type="checkbox" id="enabled" />
+        <span class="slider"></span>
+      </span>
+    </label>
+
+    <label class="row" id="hideMastheadRow">
+      <span>
+        Tapar la barra superior
+        <span class="hint">El video usa el 100% del alto. Llevá el mouse al borde superior para mostrarla.</span>
+      </span>
+      <span class="switch">
+        <input type="checkbox" id="hideMasthead" />
+        <span class="slider"></span>
+      </span>
+    </label>
+
+    <p>Activá el modo teatro (tecla <b>T</b>) y el video ocupará todo el espacio de la ventana.</p>
+    <script src="popup.js"></script>
+  </body>
+</html>

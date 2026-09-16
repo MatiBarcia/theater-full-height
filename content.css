@@ -1,0 +1,49 @@
+/*
+ * Solo aplica cuando la extensión está activa y el reproductor está en modo
+ * teatro, sin pantalla completa (clases puestas en <html> por content.js).
+ *
+ * El contenedor ocupa todo el ancho y todo el alto visible. El reproductor de
+ * YouTube ajusta el <video> manteniendo su relación de aspecto: si el video es
+ * más "ancho" que la ventana se ajusta al ancho (franjas arriba/abajo), si es
+ * más "alto" se ajusta al alto (franjas a los lados).
+ */
+html.ytfh-enabled.ytfh-theater {
+  --ytfh-top-offset: var(--ytd-masthead-height, 56px);
+}
+
+html.ytfh-enabled.ytfh-theater #full-bleed-container {
+  height: calc(100vh - var(--ytfh-top-offset)) !important;
+  max-height: none !important;
+  min-height: 0 !important;
+}
+
+html.ytfh-enabled.ytfh-theater #player-full-bleed-container,
+html.ytfh-enabled.ytfh-theater #full-bleed-container #player-container,
+html.ytfh-enabled.ytfh-theater #full-bleed-container #movie_player {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+}
+
+/*
+ * Opción "Tapar la barra superior": la barra se esconde fuera de la pantalla y
+ * el video usa el 100% del alto. Al acercar el mouse al borde superior,
+ * content.js agrega "ytfh-masthead-peek" y la barra aparece encima del video.
+ */
+html.ytfh-hide-masthead.ytfh-theater {
+  --ytfh-top-offset: 0px;
+}
+
+html.ytfh-hide-masthead.ytfh-theater #masthead-container {
+  transform: translateY(-100%);
+  transition: transform 0.12s ease-in;
+}
+
+html.ytfh-hide-masthead.ytfh-theater.ytfh-masthead-peek #masthead-container {
+  transform: none;
+  transition: transform 0.18s ease-out;
+}
+
+html.ytfh-hide-masthead.ytfh-theater #page-manager {
+  margin-top: 0 !important;
+}

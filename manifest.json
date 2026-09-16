@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Theater Full Height",
+  "version": "1.0.0",
+  "description": "En modo teatro, el video ocupa todo el alto/ancho disponible de la ventana sin entrar en pantalla completa.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "YouTube Theater Full Height",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    },
+    "default_popup": "popup.html"
+  }
+}
