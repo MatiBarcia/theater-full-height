@@ -92,10 +92,10 @@
     { passive: true }
   );
 
-  // Si el mouse sale de la ventana por arriba muy rápido, puede no haber un
-  // mousemove dentro de la zona; se detecta al salir del documento.
+  // Si el mouse sale de la página (por ejemplo, hacia la barra de direcciones
+  // o las pestañas del navegador), ocultar la barra.
   document.addEventListener("mouseout", (e) => {
-    if (peekActive() && !e.relatedTarget && e.clientY <= PEEK_HOTZONE_PX) showMasthead();
+    if (peekActive() && !e.relatedTarget) scheduleHideMasthead();
   });
 
   // Al terminar de usar el buscador (pierde el foco), ocultarla de nuevo.
